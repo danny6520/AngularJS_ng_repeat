@@ -1,0 +1,35 @@
+<html>
+<script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<body>
+<style>
+    body{
+  background-color:black;
+
+  
+}
+img{
+  height:330px;
+}
+</style>
+<div ng-app="myApp" ng-controller="customersCtrl"> 
+
+
+<img ng-repeat="l in options.langs" src="{{ l.link }}"/>
+</div>
+<script>
+    var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope) {
+    
+  $scope.options = {
+    langs: [
+      { link: 'https://s-media-cache-ak0.pinimg.com/originals/2d/fb/d3/2dfbd38983291d3d0e5c1cb0667406b5.jpg'},
+      { link: 'https://s-media-cache-ak0.pinimg.com/originals/e3/48/19/e34819dd10cff77a959733c110cda901.jpg'},
+      {link: 'http://www.pngmart.com/files/4/Cute-Cartoon-PNG-Picture.png'},
+      { link: 'http://www.kidsworldfun.com/images/story-contest/2016-2/elephant-cartoon.png'},  
+    ],
+    
+  };
+});
+</script>
+</body>
+</html>

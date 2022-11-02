@@ -1,0 +1,59 @@
+<html>
+<script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<body>
+    <style>
+        body{
+  background-color:black;
+  padding-top:50px;
+}
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 15px;
+  text-align:center;
+  margin-left:40%;
+}
+table tr:nth-child(odd) {
+  background-color: lightblue;
+  
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+
+    </style>
+
+<div ng-app="myApp" ng-controller="customersCtrl"> 
+
+<table>
+  <tr ng-repeat="l in options.langs">
+    <td>{{ l.label }}</td>
+    <td>{{ l.value }}</td>
+  </tr>
+</table>
+</div>
+
+
+
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope) {
+    
+  $scope.options = {
+    langs: [
+      {label: 'Name', value: 'geekstrick'},
+      {label: 'Status', value: 'Active'},
+      {label: 'Course', value: 'Programming'},
+      {label: 'Since', value: '2017'},
+      {label: 'Author', value: 'Rehmaanali'}
+    ],
+    
+  };
+});
+    </script>
+
+
+</body>
+</html>
