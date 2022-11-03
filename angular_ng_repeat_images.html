@@ -18,6 +18,7 @@ img{
 </div>
 <script>
     var app = angular.module('myApp', []);
+    
 app.controller('customersCtrl', function($scope) {
     
   $scope.options = {
@@ -27,9 +28,17 @@ app.controller('customersCtrl', function($scope) {
       {link: 'http://www.pngmart.com/files/4/Cute-Cartoon-PNG-Picture.png'},
       { link: 'http://www.kidsworldfun.com/images/story-contest/2016-2/elephant-cartoon.png'},  
     ],
+  
     
   };
 });
+
+fetch("image_values.json")
+  .then(response => {
+  return response.json();
+})
+ .then(jsondata => console.log(jsondata));
+
 </script>
 </body>
 </html>
